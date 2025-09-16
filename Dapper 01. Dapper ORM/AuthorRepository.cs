@@ -32,7 +32,10 @@ class AuthorRepository : IAuthorRepository
 
     public void AddAuthors(IEnumerable<Author> authors)
     {
-        throw new NotImplementedException();
+        foreach (var author in authors)
+        {
+            AddAuthor(author);
+        };
     }
 
     public Author GetAuthorById(int id)
@@ -61,6 +64,14 @@ class AuthorRepository : IAuthorRepository
     }
 
     public void RemoveAuthors(int[] authorIds)
+    {
+        foreach (var id in authorIds)
+        {
+            RemoveAuthor(id);
+        };
+    }
+
+    public void UpdateAuthor(Author author)
     {
         throw new NotImplementedException();
     }
