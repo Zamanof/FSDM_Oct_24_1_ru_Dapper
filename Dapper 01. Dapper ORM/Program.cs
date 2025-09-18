@@ -14,8 +14,8 @@ IAuthorRepository repository = new AuthorRepository(new SqlConnection(), connect
 #endregion
 
 #region Read Datas
-//var authors = repository.GetAuthors().ToList();
-//authors.ForEach(Console.WriteLine);
+var authors = repository.GetAuthors().ToList();
+authors.ForEach(Console.WriteLine);
 #endregion
 
 #region Read Data
@@ -24,7 +24,7 @@ IAuthorRepository repository = new AuthorRepository(new SqlConnection(), connect
 #endregion
 
 #region Remove Data
-repository.RemoveAuthor(1);
-var authors = repository.GetAuthors().ToList();
-authors.ForEach(Console.WriteLine);
+//repository.RemoveAuthor(1);
+//var authors = repository.GetAuthors().ToList();
+//authors.ForEach(Console.WriteLine);
 #endregion

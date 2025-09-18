@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35825.156 d17.13
+VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapper 01. Dapper ORM", "Dapper 01. Dapper ORM\Dapper 01. Dapper ORM.csproj", "{FC1C3539-DF08-4291-98F7-3AFA0F011B38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapper 02. Dapper Methods. Relationships", "Dapper 02. Dapper Methods. Relationships\Dapper 02. Dapper Methods. Relationships.csproj", "{EE213EAE-95B0-4F1F-A8E7-5B9F7585FA74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{FC1C3539-DF08-4291-98F7-3AFA0F011B38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC1C3539-DF08-4291-98F7-3AFA0F011B38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC1C3539-DF08-4291-98F7-3AFA0F011B38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE213EAE-95B0-4F1F-A8E7-5B9F7585FA74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE213EAE-95B0-4F1F-A8E7-5B9F7585FA74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE213EAE-95B0-4F1F-A8E7-5B9F7585FA74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE213EAE-95B0-4F1F-A8E7-5B9F7585FA74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
