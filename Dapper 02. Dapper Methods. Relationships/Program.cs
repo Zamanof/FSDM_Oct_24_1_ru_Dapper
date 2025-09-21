@@ -68,23 +68,74 @@ SqlConnection db = new(@"Server=(localdb)\MSSQLLocalDB;Database=Library;Integrat
 
 #region One To Many
 
+//var sqlQuery = """
+//    SELECT *
+//    FROM Students AS S 
+//    JOIN Groups AS G 
+//    ON S.Id_Group = G.Id
+//    """;
+
+//var students = db.Query<Student, Group, Student>(sqlQuery,
+//    (s, g) =>
+//    {
+//        s.Group = g;
+//        return s;
+//    }).ToList();
+
+//foreach (var student in students)
+//{
+//    Console.WriteLine(student);
+//}
+
+//var groupDict = new Dictionary<int, Group>();
+
+//var groups = db.Query<Student, Group, Group>(sqlQuery,
+//    (s, g) =>
+//    {
+//        if (!groupDict.TryGetValue(g.Id, out var existingGroup))
+//        {
+//            existingGroup = g;
+//            existingGroup.Students = new List<Student>();
+//            groupDict.Add(g.Id, existingGroup);
+//        }
+//        existingGroup.Students.Add(s);
+//        return existingGroup;
+
+//    }).Distinct().ToList();
+
+//foreach (var group in groups)
+//{
+//    Console.WriteLine(group);
+//    foreach (var student in group.Students)
+//    {
+//        Console.WriteLine($"    {student.FirstName} {student.LastName}");
+//    }
+//}
+
+
+#endregion
+
+#region Many To Many
 var sqlQuery = """
     SELECT *
-    FROM Students AS S 
-    CROSS JOIN Groups AS G 
-    WHERE S.Id_Group = G.Id
+    FROM Students AS S
+    JOIN S_Cards AS SC ON S.Id = SC.Id_Student
+    JOIN Books AS B ON B.Id = SC.Id_Book
     """;
-
-var students = db.Query<Student, Group, Student>(sqlQuery,
-    (s, g) =>
+var results = db.Query<Student, Book, Student>(sqlQuery,
+    (s, b) =>
     {
-        s.Group = g;
+        s.Books.Add(b);
         return s;
-    }).ToList();
-
-foreach (var student in students)
+    }
+    );
+foreach (var r in results)
 {
-    Console.WriteLine(student);
+    Console.WriteLine($"{r.FirstName} {r.LastName}");
+    foreach (var b in r.Books)
+    {
+        Console.WriteLine($"        {b.Name}");
+    }
 }
 
 #endregion

@@ -12,6 +12,7 @@ class Student
     public int Term { get; set; }
 
     public virtual Group Group { get; set; } = null!;
+    public virtual List<Book> Books { get; set; } = new List<Book>();
     public override string ToString()
     {
         return $"{FirstName} {LastName} - {Group.Name}";

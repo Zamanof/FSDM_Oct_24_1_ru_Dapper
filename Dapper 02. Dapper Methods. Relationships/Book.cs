@@ -21,6 +21,7 @@
     public int Quantity { get; set; }
 
     public virtual Author IdAuthorNavigation { get; set; } = null!;
+    public virtual List<Student> Students { get; set; } = new List<Student>();
 
     public override string ToString()
     {
