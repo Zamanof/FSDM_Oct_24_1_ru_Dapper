@@ -8,6 +8,6 @@ class Author
 
     public override string ToString()
     {
-        return $"{Id} {FirstName} {LastName}";
+        return $"Id: {Id} Name: {FirstName} Surname: {LastName}";
     }
 }
